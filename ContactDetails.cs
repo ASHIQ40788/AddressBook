@@ -38,7 +38,7 @@ namespace AddressBookProgram
                 Console.WriteLine(contact.FirstName + "  " + contact.Phone + "  " + contact.Address + "  " + contact.City + "  " + contact.State + "  " + contact.Zip);
             }
         }
-        // uc-3
+        //UC3-Edit contact details.
         public void EditContact()
         {
 
@@ -46,7 +46,7 @@ namespace AddressBookProgram
             string UserFirstname = Console.ReadLine();
             foreach (Contact contact in contactlist)
             {
-                // Console.WriteLine(con.FirstName + "  " + con.Phone + "  " + con.Address + "  " + con.City + "  " + con.State + "  " + con.Zip);
+                // Console.WriteLine(contact.FirstName + "  " + contact.Phone + "  " + contact.Address + "  " + contact.City + "  " + contact.State + "  " + contact.Zip);
                 if (contact.FirstName.Equals(UserFirstname))
                 {
                     Console.WriteLine("what data u want to edit,press first character only  of that field");
