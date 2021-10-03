@@ -10,14 +10,14 @@ namespace AddressBookProgram
      {
         //created instance variables
             public string FirstName { get; set; }
-            public long Phone { get; set; }
+            public double Phone { get; set; }
             public string Address { get; set; }
             public string City { get; set; }
             public string State { get; set; }
-            public int Zip { get; set; }
+            public double Zip { get; set; }
 
         //created constructor method
-            public Contact(string firstName, long phone, string address, string city, string state, int zip)
+            public Contact(string firstName, double phone, string address, string city, string state, double zip)
             {
                 this.FirstName = firstName;
                 this.Phone = phone;

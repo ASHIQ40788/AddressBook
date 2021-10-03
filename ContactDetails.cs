@@ -9,23 +9,25 @@ namespace AddressBookProgram
     class ContactDetails
     {
         List<Contact> contactlist = new List<Contact>();
+        //UC6.
+        public LinkedList<Contact> personDetails = new LinkedList<Contact>();
         public void AddContact()
         {
 
             //adding contacts  details.
             Console.WriteLine("Enter your first Name");
-            var FirstName = Console.ReadLine();
+            string FirstName = Console.ReadLine();
             Console.WriteLine("Enter Phone Number");
-            var Phone = long.Parse(Console.ReadLine());
+            double Phone = long.Parse(Console.ReadLine());
 
             Console.WriteLine("Enter Address");
-            var Address = Console.ReadLine();
+            string Address = Console.ReadLine();
             Console.WriteLine("Enter City");
-            var City = Console.ReadLine();
+            string City = Console.ReadLine();
             Console.WriteLine("Enter State");
-            var State = Console.ReadLine();
+            string State = Console.ReadLine();
             Console.WriteLine("Enter Zip Code");
-            var Zip = int.Parse(Console.ReadLine());
+            double Zip = int.Parse(Console.ReadLine());
             Contact _contact = new Contact(FirstName, Phone, Address, City, State, Zip);
             contactlist.Add(_contact);
         }
@@ -109,6 +111,33 @@ namespace AddressBookProgram
 
             }
         }
+
+        //UC6
+        //Printing/Displaying the address book details 
+        public void Disply()
+        {
+            if (personDetails.Count == 0)
+            {
+                Console.WriteLine("Address Book is empty.");
+                return;
+            }
+            else
+            {
+                foreach (Contact person in personDetails)
+                {
+                    Console.WriteLine("Address book details");
+                    Console.WriteLine("enter your  First Name:" + person.FirstName);
+                    Console.WriteLine("enter your Address:" + person.Address);
+                    Console.WriteLine("enter your City:" + person.City);
+                    Console.WriteLine("enter your Phone Number:" + person.Phone);
+                    Console.WriteLine("enter your State:" + person.State);
+                    Console.WriteLine("enter your Zip:" + person.Zip);
+                   
+                }
+            }
+        }
+
+
     }
 
 }
