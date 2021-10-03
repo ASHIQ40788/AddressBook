@@ -18,6 +18,9 @@ namespace AddressBookProgram
 
             //UC3-Editing Contact Details
             contactDetails.EditContact();
+
+            //uc4-Deleting Contact Details
+            contactDetails.DeleteContact();
         }
     }
 }

@@ -33,9 +33,9 @@ namespace AddressBookProgram
         //Created method to display contact details
         public void Display()
         {
-            foreach (Contact con in contactlist)
+            foreach (Contact contact in contactlist)
             {
-                Console.WriteLine(con.FirstName + "  " + con.Phone + "  " + con.Address + "  " + con.City + "  " + con.State + "  " + con.Zip);
+                Console.WriteLine(contact.FirstName + "  " + contact.Phone + "  " + contact.Address + "  " + contact.City + "  " + contact.State + "  " + contact.Zip);
             }
         }
         // uc-3
@@ -44,10 +44,10 @@ namespace AddressBookProgram
 
             Console.WriteLine(" enter firstName to modify contact details of a person ");
             string UserFirstname = Console.ReadLine();
-            foreach (Contact con in contactlist)
+            foreach (Contact contact in contactlist)
             {
                 // Console.WriteLine(con.FirstName + "  " + con.Phone + "  " + con.Address + "  " + con.City + "  " + con.State + "  " + con.Zip);
-                if (con.FirstName.Equals(UserFirstname))
+                if (contact.FirstName.Equals(UserFirstname))
                 {
                     Console.WriteLine("what data u want to edit,press first character only  of that field");
                     char userinput = char.Parse(Console.ReadLine());
@@ -55,33 +55,33 @@ namespace AddressBookProgram
                     {
                         case 'a':
                             Console.WriteLine(" enter address");
-                            con.Address = Console.ReadLine();
-                            Console.WriteLine(" edited Adress" + con.Address);
+                            contact.Address = Console.ReadLine();
+                            Console.WriteLine(" edited Adress" + contact.Address);
                             break;
                         case 'p':
                             Console.WriteLine(" enter Phone");
-                            con.Phone = int.Parse(Console.ReadLine());
-                            Console.WriteLine(" edited Adress" + con.Phone);
+                            contact.Phone = int.Parse(Console.ReadLine());
+                            Console.WriteLine(" edited Adress" + contact.Phone);
                             break;
                         case 'f':
                             Console.WriteLine(" enter firstname");
-                            con.FirstName = Console.ReadLine();
-                            Console.WriteLine(" edited Adress" + con.FirstName);
+                            contact.FirstName = Console.ReadLine();
+                            Console.WriteLine(" edited Adress" + contact.FirstName);
                             break;
                         case 'c':
                             Console.WriteLine(" enter city");
-                            con.City = Console.ReadLine();
-                            Console.WriteLine(" edited Adress" + con.City);
+                            contact.City = Console.ReadLine();
+                            Console.WriteLine(" edited Adress" + contact.City);
                             break;
                         case 's':
                             Console.WriteLine(" enter state");
-                            con.State = Console.ReadLine();
-                            Console.WriteLine(" edited Adress" + con.State);
+                            contact.State = Console.ReadLine();
+                            Console.WriteLine(" edited Adress" + contact.State);
                             break;
                         case 'z':
                             Console.WriteLine(" enter address");
-                            con.Zip = int.Parse(Console.ReadLine());
-                            Console.WriteLine(" edited Adress" + con.Zip);
+                            contact.Zip = int.Parse(Console.ReadLine());
+                            Console.WriteLine(" edited Adress" + contact.Zip);
                             break;
 
                         default:
@@ -91,5 +91,24 @@ namespace AddressBookProgram
                 }
             }
         }
+
+        //UC4-deleting contact details
+        public void DeleteContact()
+        {
+
+            Console.WriteLine(" enter firstName to delete the contact ");
+            string UserFirstname = Console.ReadLine();
+            foreach (Contact contact in contactlist)
+            {
+                // Console.WriteLine(contact.FirstName + "  " + contact.Phone + "  " + contact.Address + "  " + contact.City + "  " + contact.State + "  " + contact.Zip);
+                if (contact.FirstName.Equals(UserFirstname))
+                {
+                    contactlist.Remove(contact);
+                    break;
+                }
+
+            }
+        }
     }
+
 }
