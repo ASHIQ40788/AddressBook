@@ -137,6 +137,18 @@ namespace AddressBookProgram
             }
         }
 
+        public bool CheckDuplicateName(string searchName)
+        {
+            //Checking Duplicate Name using Lamda Expression in contact List whether the duplicate name is present or not.
+            bool isPresent = contactlist.Any(e => (e.FirstName.ToLower().Equals(searchName.ToLower())));
+            if (isPresent)
+            {
+
+                return true;
+            }
+            return false;
+        }
+
 
     }
 

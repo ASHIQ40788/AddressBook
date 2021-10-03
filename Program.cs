@@ -20,7 +20,9 @@ namespace AddressBookProgram
             {
                 Console.WriteLine("Enter the name of the address book: ");
                 string bookName = Console.ReadLine();
-                ContactDetails person = new ContactDetails();
+
+                //UC5,UC7- duplicate entry check at the time of new entry.
+                ContactDetails contactDetails = new ContactDetails();
                 Console.WriteLine("Enter the no of contacts you want to add in the address book: ");
                 int contactNum = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Choose any option to perform:\n 1.Adding a new contact \n 2.Editing a existing contact \n 3.Deleting existing contact \n 4.Exit from the process");
@@ -31,19 +33,19 @@ namespace AddressBookProgram
                         while (contactNum > 0)
                         {
                             Console.WriteLine("Enter the details of contact to be added: ");
-                            person.AddContact();
+                            contactDetails.AddContact();
                             contactNum = -1;
-                            person.Disply();
+                            contactDetails.Disply();
                         }
                         break;
                     case 2:
-                        person.EditContact();
-                        person.Disply();
+                        contactDetails.EditContact();
+                        contactDetails.Disply();
                         Console.WriteLine("Enter any key to continue");
                         break;
                     case 3:
-                        person.DeleteContact();
-                        person.Disply();
+                        contactDetails.DeleteContact();
+                        contactDetails.Disply();
                         Console.WriteLine("Enter any key to continue");
                         break;
                     case 4:
@@ -71,7 +73,7 @@ namespace AddressBookProgram
                 }
                 else
                 {
-                    addressBook.Add(bookName, person.personDetails);
+                    addressBook.Add(bookName, contactDetails.personDetails);
                 }
                 NumberofBooks++;
 
